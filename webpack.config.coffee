@@ -3,7 +3,7 @@ webpack=require 'webpack'
 module.exports =
   cache:false
   entry:
-    index: ['./src/index.jsx']
+    index: ['./src/index.js']
   devtool: 'inline-source-map'
   output:
     path: path.resolve "./target"
@@ -16,12 +16,18 @@ module.exports =
     ]
     moduleDirectories: ['node_modules','bower_components']
     extensions: [
-      '', '.webpack.js', '.web.js', '.js', '.jsx'
+      '', '.webpack.js', '.web.js', '.js'
     ]
 
   module:
     loaders: [
-      { test: /\.jsx$/, loader: 'babel-loader' }
+      { 
+        test: /\.js$/,
+        loader: 'babel-loader'
+        exclude: [
+          path.resolve("./node_modules")
+        ]
+      }
     ]
   plugins: [
   ]
