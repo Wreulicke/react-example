@@ -11,6 +11,8 @@ import { BrowserRouter, Match, Miss } from 'react-router';
 import Todo from './module/Todo';
 import AppMenu from './module/AppMenu';
 import SplitPane from 'react-split-pane';
+import Markdown from './module/markdown';
+
 const App = () => (
   <BrowserRouter>
     <MuiThemeProvider muiTheme={ getMuiTheme() }>
@@ -27,7 +29,9 @@ const App = () => (
             <AppBar
                     iconElementLeft={ <span/> }
                     title="hogehoge" />
-            <Match/>
+            <Match
+                   pattern="/about"
+                   component={ Markdown } />
             <Miss
                   pattern="/"
                   component={ Todo } />

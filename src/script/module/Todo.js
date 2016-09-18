@@ -15,6 +15,7 @@ class TodoApp extends React.Component {
       }]
     };
   }
+
   addTask(e) {
     if (e.keyCode && e.keyCode == 13) {
       const newState = {
@@ -28,8 +29,8 @@ class TodoApp extends React.Component {
   }
 
   render() {
-    const TaskList = map(this.state.tasks, (task) => {
-      return (<ListItem leftIcon={ <ActionGrade color={ pinkA200 } /> }>
+    const TaskList = map(this.state.tasks, (task, i) => {
+      return (<ListItem key={i} leftIcon={ <ActionGrade color={ pinkA200 } /> }>
                 { task.name }
               </ListItem>);
     });

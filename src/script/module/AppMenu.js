@@ -1,5 +1,4 @@
 import React from 'react';
-import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
 
 import { Link } from 'react-router';
@@ -10,11 +9,11 @@ class AppMenu extends React.Component {
 
   render() {
     const resetStyle = {
-      'margin-left': '0px',
+      'marginLeft': '0px',
       padding: '0px'
     };
     const linkStyle = {
-      'padding-left': '16px'
+      'paddingLeft': '16px'
     };
     return (
       <div>
