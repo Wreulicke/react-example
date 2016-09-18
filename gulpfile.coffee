@@ -6,7 +6,7 @@ packConfig = require './webpack.config.coffee'
 webpack = require 'webpack-stream'
 stylus=require 'gulp-stylus'
 sync=require('browser-sync').create()
-
+fallback=require('connect-history-api-fallback')
 plumb= ->
   plumber
     errorHandler: (err) ->
@@ -14,7 +14,7 @@ plumb= ->
       @emit('end')
 
 gulp.task 'stylus', ->
-  gulp.src('src/stylus/**/*.styl')
+  gulp.src('src/styl/**/*.styl')
   .pipe plumb()
   .pipe stylus()
   .pipe gulp.dest 'target/css'
@@ -45,12 +45,12 @@ gulp.task 'default', (cb) ->
     cb
   )
 
-gulp.task 'reload', sync.reload
-gulp.task 'watch', ->
+gulp.task 'reload', () -> sync.reload()
+gulp.task 'watch', ['default'] ,->
   sync.init
     server:
-      baseDir:'.'
-    startPath:'target'
+      baseDir:'target'
+      middleware:[fallback()]
 
   gulp.watch 'src/stylus/**/*.styl', ->
     run 'stylus','vulcanize', 'reload'

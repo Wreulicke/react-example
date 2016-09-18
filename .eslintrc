@@ -28,7 +28,8 @@
       "no-var": "error",
       "prefer-const":"error",
       "prefer-spread":"error",
-      "prefer-template": "error"
+      "prefer-template": "error",
+      "no-console": "off"
     }
 }
 
