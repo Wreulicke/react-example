@@ -4,14 +4,12 @@ import React from 'react';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import AppBar from 'material-ui/AppBar';
 
 import Paper from 'material-ui/Paper';
-import { BrowserRouter, Match, Miss } from 'react-router';
-import Todo from './module/Todo';
+import { BrowserRouter} from 'react-router';
 import AppMenu from './module/AppMenu';
 import SplitPane from 'react-split-pane';
-import Markdown from './module/markdown';
+import MainContent from './module/MainContent';
 
 const App = () => (
   <BrowserRouter>
@@ -25,17 +23,7 @@ const App = () => (
         </header>
         <SplitPane defaultSize="120px">
           <AppMenu/>
-          <div>
-            <AppBar
-                    iconElementLeft={ <span/> }
-                    title="hogehoge" />
-            <Match
-                   pattern="/about"
-                   component={ Markdown } />
-            <Miss
-                  pattern="/"
-                  component={ Todo } />
-          </div>
+          <MainContent />
         </SplitPane>
       </div>
     </MuiThemeProvider>
