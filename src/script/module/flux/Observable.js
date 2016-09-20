@@ -1,9 +1,9 @@
-function Factory(state, dispatcher) {
+function Factory(state, ...dispatchers) {
   return new Proxy(state, {
     set(target, key, news) {
       const olds = target[key];
       target[key] = news;
-      dispatcher.emit(`change:${key}`, news, olds);
+      dispatchers.forEach((d)=>d.emit(`change:${key}`, news, olds));
       return true;
     },
     get(target, key) {
