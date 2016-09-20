@@ -1,6 +1,6 @@
-import Emmitter from 'eventemitter2';
-// SHOULD BE Emmitterを隠蔽
-class Store extends Emmitter{
+import Emitter from 'eventemitter2';
+// SHOULD BE Emmtterを隠蔽
+class Store extends Emitter{
   constructor(){
     super();
     
