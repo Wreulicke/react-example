@@ -1,4 +1,5 @@
-function Factory(state, ...dispatchers) {
+function Factory(state, ... initialDispatchers) {
+  const dispatchers=initialDispatchers;
   return new Proxy(state, {
     set(target, key, news) {
       const olds = target[key];
@@ -8,11 +9,14 @@ function Factory(state, ...dispatchers) {
     },
     get(target, key) {
       return target[key];
+    },
+    // TODO dispatchers removavle?
+    apply(...newDispatchers){
+      dispatchers.push(...newDispatchers);
     }
   });
 }
 
-// TODO multi dispatcher 
 function Observable(state) {
   return Factory.bind(null, state);
 }
