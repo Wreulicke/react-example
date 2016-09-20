@@ -5,8 +5,8 @@ import Todo from './Todo';
 import Markdown from './Markdown';
 import Login from './Login';
 import If from './If';
-import Store from './flux/Store';
-import O from './flux/Observable';
+import Store from '../module/flux/Store';
+import O from '../module/flux/Observable';
 
 class Content extends React.Component {
   constructor() {
@@ -17,9 +17,7 @@ class Content extends React.Component {
     const state = O(this.state);
     const store = new Store();
     this.store = state(store);
-    store.on('change:isLogin', (isLogin) => this.setState({
-      isLogin: isLogin
-    }));
+    store.on('change:isLogin', (isLogin) => this.setState({isLogin}));
   }
   render() {
     return (

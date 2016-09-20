@@ -2,6 +2,10 @@ import React from 'react';
 import MenuItem from 'material-ui/MenuItem';
 
 import { Link } from 'react-router';
+import container from '../module/container/Application';
+const Component=container.get('Component');
+
+@Component('AppMenu')
 class AppMenu extends React.Component {
   constructor() {
     super();

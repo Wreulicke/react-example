@@ -1,15 +1,13 @@
 import React from 'react';
-
-// import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
-
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-
 import Paper from 'material-ui/Paper';
-import { BrowserRouter } from 'react-router';
-import AppMenu from './module/AppMenu';
+
 import SplitPane from 'react-split-pane';
-import MainContent from './module/MainContent';
+import { BrowserRouter } from 'react-router';
+
+import AppMenu from './view/AppMenu';
+import MainContent from './view/MainContent';
 
 const App = () => (
   <BrowserRouter>
