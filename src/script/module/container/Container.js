@@ -6,7 +6,8 @@ class Container {
     this.observers = observers;
   }
   regist(key, target, ...deps) {
-    if (this.reference[key] != null) throw new Error(`already regist:${key}`);
+    if (this.reference[key] != null)
+      throw new Error(`already regist:${key}`);
     this.reference[key] = {
       target,
       deps

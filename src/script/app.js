@@ -6,7 +6,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 import Paper from 'material-ui/Paper';
-import { BrowserRouter} from 'react-router';
+import { BrowserRouter } from 'react-router';
 import AppMenu from './module/AppMenu';
 import SplitPane from 'react-split-pane';
 import MainContent from './module/MainContent';

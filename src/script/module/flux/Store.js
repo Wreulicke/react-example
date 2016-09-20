@@ -1,9 +1,9 @@
 import Emitter from 'eventemitter2';
 // SHOULD BE Emmtterを隠蔽
-class Store extends Emitter{
-  constructor(){
+class Store extends Emitter {
+  constructor() {
     super();
-    
+
   }
 }
 

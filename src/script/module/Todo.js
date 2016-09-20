@@ -30,7 +30,9 @@ class TodoApp extends React.Component {
 
   render() {
     const TaskList = map(this.state.tasks, (task, i) => {
-      return (<ListItem key={i} leftIcon={ <ActionGrade color={ pinkA200 } /> }>
+      return (<ListItem
+                        key={ i }
+                        leftIcon={ <ActionGrade color={ pinkA200 } /> }>
                 { task.name }
               </ListItem>);
     });
