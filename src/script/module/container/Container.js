@@ -16,11 +16,11 @@ class Container {
     this.publish(`regist`, key, target);
   }
   get(key) {
-    if(typeof key!== 'string'){
+    if (typeof key !== 'string') {
       throw new Error(`key is not string, found ${key}`);
     }
     if (this.cache[key] != null) return this.cache[key];
-    if(this.reference[key]==null){
+    if (this.reference[key] == null) {
       throw new Error(`${key} is not defined`);
     }
     const {target, deps} = this.reference[key];

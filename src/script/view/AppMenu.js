@@ -2,7 +2,7 @@ import React from 'react';
 import MenuItem from 'material-ui/MenuItem';
 import { Link } from 'react-router';
 
-import {ClassComponent} from '../module/container/Application';
+import { ClassComponent } from '../module/container/Application';
 
 class AppMenu extends React.Component {
   render() {

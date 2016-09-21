@@ -1,7 +1,7 @@
 import React from 'react';
 import Component from '../module/container/Application';
 
-const If=({show, children}) => {
+const If = ({show, children}) => {
   const style = {
     display: show ? '' : 'none'
   };

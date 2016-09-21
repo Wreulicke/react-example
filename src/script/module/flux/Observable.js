@@ -1,5 +1,5 @@
 
-import {ClassComponent} from '../container/Application';
+import { ClassComponent } from '../container/Application';
 function Factory(state, ... initialDispatchers) {
   const dispatchers = initialDispatchers;
   return new Proxy(state, {

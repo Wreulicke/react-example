@@ -1,5 +1,5 @@
 import Emitter from 'eventemitter2';
-import {ClassComponent} from '../container/Application';
+import { ClassComponent } from '../container/Application';
 // SHOULD BE Emmtterを隠蔽
 class Store extends Emitter {
   constructor() {

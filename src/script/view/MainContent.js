@@ -10,7 +10,7 @@ import If from './If';
 import Store from '../module/flux/Store';
 import O from '../module/flux/Observable';
 
-import {ClassComponent} from '../module/container/Application';
+import { ClassComponent } from '../module/container/Application';
 
 class MainContent extends React.Component {
   constructor(If, Store, O, Login, Markdown, Todo, ...args) {
@@ -21,8 +21,10 @@ class MainContent extends React.Component {
     const state = O(this.state);
     const store = new Store();
     this.store = state(store);
-    store.on('change:isLogin', (isLogin) => this.setState({isLogin}));
-    this.component={
+    store.on('change:isLogin', (isLogin) => this.setState({
+      isLogin
+    }));
+    this.component = {
       If,
       Login,
       Markdown,
@@ -30,7 +32,7 @@ class MainContent extends React.Component {
     };
   }
   render() {
-    const {If, Login, Markdown,Todo}=this.component;
+    const {If, Login, Markdown, Todo} = this.component;
     return (
       <div>
         <AppBar
@@ -55,4 +57,4 @@ class MainContent extends React.Component {
   }
 }
 
-export default ClassComponent('MainContent',If, Store, O, Login, Markdown, Todo)(MainContent);
+export default ClassComponent('MainContent', If, Store, O, Login, Markdown, Todo)(MainContent);
