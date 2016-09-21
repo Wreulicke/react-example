@@ -4,6 +4,7 @@ import { List, ListItem } from 'material-ui/List';
 
 import ActionGrade from 'material-ui/svg-icons/action/grade';
 import { pinkA200 } from 'material-ui/styles/colors';
+import {ClassComponent} from '../module/container/Application';
 const map = Function.prototype.call.bind(Array.prototype.map);
 
 class TodoApp extends React.Component {
@@ -49,4 +50,4 @@ class TodoApp extends React.Component {
   }
 }
 
-export default TodoApp;
+export default ClassComponent('TodoApp')(TodoApp);

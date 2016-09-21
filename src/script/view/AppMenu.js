@@ -1,16 +1,10 @@
 import React from 'react';
 import MenuItem from 'material-ui/MenuItem';
-
 import { Link } from 'react-router';
-import container from '../module/container/Application';
-const Component=container.get('Component');
 
-@Component('AppMenu')
+import {ClassComponent} from '../module/container/Application';
+
 class AppMenu extends React.Component {
-  constructor() {
-    super();
-  }
-
   render() {
     const resetStyle = {
       'marginLeft': '0px',
@@ -46,4 +40,4 @@ class AppMenu extends React.Component {
       );
   }
 }
-export default AppMenu;
+export default ClassComponent('AppMenu')(AppMenu);

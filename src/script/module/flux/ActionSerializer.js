@@ -1,4 +1,6 @@
 
+import {Component} from '../container/Application';
+
 const isArray = Array.isArray;
 function Factory(store) {
   return ActionSerializer.bind(null, store);
@@ -21,5 +23,8 @@ function ActionSerializer(store, actions, mutations) {
   }, {});
 }
 
-export default Factory;
-export { ActionSerializer };
+export default Component('Factory')(Factory);
+const serializer=Component('ActionSerializer')(ActionSerializer);
+export { 
+  serializer as ActionSerializer
+};

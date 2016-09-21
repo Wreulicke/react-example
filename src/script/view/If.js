@@ -1,6 +1,7 @@
-
 import React from 'react';
-const If = ({show, children}) => {
+import Component from '../module/container/Application';
+
+const If=({show, children}) => {
   const style = {
     display: show ? '' : 'none'
   };
@@ -8,4 +9,5 @@ const If = ({show, children}) => {
             { children }
           </div>);
 };
-export default If;
+
+export default Component('If')(If);

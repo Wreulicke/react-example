@@ -1,16 +1,20 @@
 import React from 'react';
 import AppBar from 'material-ui/AppBar';
 import { Match, Miss } from 'react-router';
+
 import Todo from './Todo';
 import Markdown from './Markdown';
 import Login from './Login';
+
 import If from './If';
 import Store from '../module/flux/Store';
 import O from '../module/flux/Observable';
 
-class Content extends React.Component {
-  constructor() {
-    super();
+import {ClassComponent} from '../module/container/Application';
+
+class MainContent extends React.Component {
+  constructor(If, Store, O, Login, Markdown, Todo, ...args) {
+    super(...args);
     this.state = {
       isLogin: false
     };
@@ -18,8 +22,15 @@ class Content extends React.Component {
     const store = new Store();
     this.store = state(store);
     store.on('change:isLogin', (isLogin) => this.setState({isLogin}));
+    this.component={
+      If,
+      Login,
+      Markdown,
+      Todo
+    };
   }
   render() {
+    const {If, Login, Markdown,Todo}=this.component;
     return (
       <div>
         <AppBar
@@ -43,4 +54,5 @@ class Content extends React.Component {
       </div>);
   }
 }
-export default Content;
+
+export default ClassComponent('MainContent',If, Store, O, Login, Markdown, Todo)(MainContent);

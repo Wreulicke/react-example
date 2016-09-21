@@ -1,3 +1,5 @@
+
+import {ClassComponent} from '../container/Application';
 function Factory(state, ... initialDispatchers) {
   const dispatchers = initialDispatchers;
   return new Proxy(state, {
@@ -21,4 +23,4 @@ function Observable(state) {
   return Factory.bind(null, state);
 }
 
-export default Observable;
+export default ClassComponent('Observable')(Observable);

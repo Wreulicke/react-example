@@ -1,8 +1,7 @@
-const ComponentFactory = (container) => (key, ...deps) => {
+const ComponentFactory = (container) => (key, ...deps) =>
   (target) => {
     container.regist(key, target, ...deps);
-    return target;
+    return key;
   };
-};
 
 export default ComponentFactory;
