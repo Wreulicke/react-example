@@ -7,14 +7,14 @@ const ContainerFactory = function() {
     return new ProductionContainer();
   } else {
     const container = new DevelopmentContainer();
-    container.regist('Container', container);
+    container.regist('Container', () => container);
     return container;
   }
 };
 const Container = function() {
   const container = ContainerFactory();
   const Component = (key, ...deps) => {
-    return ComponentFactory(container.get('Container'))(key, ...deps);
+    return ComponentFactory(container.get('Container')())(key, ...deps);
   };
   const ClassComponent = (...deps) => (target) => {
     return Component(target.name, ...deps)(target);

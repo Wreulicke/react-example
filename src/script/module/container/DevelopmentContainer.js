@@ -1,4 +1,4 @@
-class Container {
+class DevelopmentContainer {
   constructor(...observers) {
     // SHOULD BE WeakMap ?
     this.reference = {};
@@ -48,4 +48,4 @@ class Container {
   }
 }
 
-export default Container;
+export default DevelopmentContainer;

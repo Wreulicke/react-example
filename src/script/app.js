@@ -9,17 +9,16 @@ import MainContent from './view/MainContent';
 import AppHeader from './view/AppHeader';
 
 import { Component } from './module/container/Application';
-
-export default Component('App', AppMenu, MainContent, AppHeader)(
-  (Menu, Content, Header) => (<BrowserRouter>
-                                <MuiThemeProvider muiTheme={ getMuiTheme() }>
-                                  <div>
-                                    <Header />
-                                    <SplitPane defaultSize="120px">
-                                      <Menu/>
-                                      <Content />
-                                    </SplitPane>
-                                  </div>
-                                </MuiThemeProvider>
-                              </BrowserRouter>)
+export default Component('App')(
+  () => (<BrowserRouter>
+           <MuiThemeProvider muiTheme={ getMuiTheme() }>
+             <div>
+               <AppHeader />
+               <SplitPane defaultSize="120px">
+                 <AppMenu/>
+                 <MainContent />
+               </SplitPane>
+             </div>
+           </MuiThemeProvider>
+         </BrowserRouter>)
 );
