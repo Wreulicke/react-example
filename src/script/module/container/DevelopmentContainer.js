@@ -1,14 +1,14 @@
 class DevelopmentContainer {
-  constructor(...observers) {
+  constructor() {
     // SHOULD BE WeakMap ?
     this.reference = {};
-    this.observers = observers;
+    this.regist('Container', () => this);
   }
   regist(key, target) {
+    this.validateKey(key);
     if (this.reference[key] != null)
       throw new Error(`already regist:${key}`);
     this.reference[key] = target;
-    this.publish(`regist`, target);
     return key;
   }
   validateKey(key) {
@@ -20,10 +20,8 @@ class DevelopmentContainer {
     }
   }
   get(key) {
+    this.validateKey(key);
     return this.reference[key];
-  }
-  publish(event, ...data) {
-    if (this.observers != null) this.observers.forEach((o) => o.emit(event, ...data));
   }
 }
 
