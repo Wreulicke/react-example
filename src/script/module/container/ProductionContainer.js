@@ -3,7 +3,7 @@ class ProductionContainer {
     this.observers = observers;
   }
   regist(key, target, ...deps) {
-    this.publish(`regist`, key, target);
+    this.publish(`regist`, target);
     return target.bind(null, ...deps);
   }
   get(key) {
