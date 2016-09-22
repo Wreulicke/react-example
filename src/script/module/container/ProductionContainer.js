@@ -7,7 +7,7 @@ class ProductionContainer {
     return target.bind(null, ...deps);
   }
   get(key) {
-    if (key === 'Container') return this;
+    if (key === 'Container') return () => this;
     return key;
   }
   publish(event, ...data) {
