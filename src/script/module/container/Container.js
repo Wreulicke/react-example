@@ -10,9 +10,9 @@ const ContainerFactory = function() {
 };
 const Container = function() {
   const container = ContainerFactory();
-  const Component = (key) => (process.env.NODE_ENV === 'production')? target => target :ComponentRegistrant(container)(key);
-  const FunctionComponent = (target) => (process.env.NODE_ENV === 'production')? target : Component(target.name)(target);
-  const ClassComponent = (target) => (process.env.NODE_ENV === 'production')? target : Component(target.name)((...args) => new target(...args));
+  const Component = (key) => (process.env.NODE_ENV === 'production') ? target => target : ComponentRegistrant(container)(key);
+  const FunctionComponent = (target) => (process.env.NODE_ENV === 'production') ? target : Component(target.name)(target);
+  const ClassComponent = (target) => (process.env.NODE_ENV === 'production') ? target : Component(target.name)((...args) => new target(...args));
   return {
     container,
     Component,
