@@ -13,12 +13,8 @@ const ContainerFactory = function() {
 };
 const Container = function() {
   const container = ContainerFactory();
-  const Component = (key, ...deps) => {
-    return ComponentFactory(container.get('Container')())(key, ...deps);
-  };
-  const ClassComponent = (...deps) => (target) => {
-    return Component(target.name, ...deps)(target);
-  };
+  const Component = (key) => ComponentFactory(container.get('Container')())(key);
+  const ClassComponent = (target) => Component(target.name)(target);
   return {
     container,
     Component,

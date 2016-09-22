@@ -10,4 +10,4 @@ const If = ({show, children}) => {
           </div>);
 };
 
-export default ClassComponent()(If);
+export default ClassComponent(If);

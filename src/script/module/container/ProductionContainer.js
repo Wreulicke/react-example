@@ -2,9 +2,9 @@ class ProductionContainer {
   constructor(...observers) {
     this.observers = observers;
   }
-  regist(key, target, ...deps) {
+  regist(key, target) {
     this.publish(`regist`, target);
-    return target.bind(null, ...deps);
+    return target;
   }
   get(key) {
     if (key === 'Container') return () => this;

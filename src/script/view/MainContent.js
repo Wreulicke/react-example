@@ -50,4 +50,4 @@ class MainContent extends React.Component {
   }
 }
 
-export default ClassComponent()(MainContent);
+export default ClassComponent(MainContent);

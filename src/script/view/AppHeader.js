@@ -9,4 +9,4 @@ const AppHeader = () => (<header className="header">
                              </div>
                            </Paper>
                          </header>);
-export default ClassComponent()(AppHeader);
+export default ClassComponent(AppHeader);

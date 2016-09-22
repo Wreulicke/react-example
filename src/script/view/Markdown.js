@@ -5,4 +5,4 @@ marked.setOptions({
   sanitize: true
 });
 const Markdown = (props) => <div dangerouslySetInnerHTML={ { '__html': marked(props.source || '# test') } } />;
-export default ClassComponent()(Markdown);
+export default ClassComponent(Markdown);

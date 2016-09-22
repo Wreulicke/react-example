@@ -6,4 +6,4 @@ const Login = ({store}) => {
          </button>;
 };
 
-export default ClassComponent()(Login);
+export default ClassComponent(Login);

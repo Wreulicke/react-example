@@ -1,5 +1,5 @@
-const ComponentFactory = (container) => (key, ...deps) => (target) => {
-  const record = container.regist(key, target, ...deps);
+const ComponentFactory = (container) => (key) => (target) => {
+  const record = container.regist(key, target);
   return (...args) => new (container.get(record))(...args);
 };
 
