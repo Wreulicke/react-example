@@ -57,4 +57,4 @@ class MainContent extends React.Component {
   }
 }
 
-export default ClassComponent('MainContent', If, Store, O, Login, Markdown, Todo)(MainContent);
+export default ClassComponent(If, Store, O, Login, Markdown, Todo)(MainContent);

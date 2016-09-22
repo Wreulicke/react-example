@@ -50,4 +50,4 @@ class TodoApp extends React.Component {
   }
 }
 
-export default ClassComponent('TodoApp')(TodoApp);
+export default ClassComponent()(TodoApp);

@@ -40,4 +40,4 @@ class AppMenu extends React.Component {
       );
   }
 }
-export default ClassComponent('AppMenu')(AppMenu);
+export default ClassComponent()(AppMenu);

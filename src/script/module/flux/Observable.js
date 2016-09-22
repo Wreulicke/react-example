@@ -23,4 +23,4 @@ function Observable(state) {
   return Factory.bind(null, state);
 }
 
-export default ClassComponent('Observable')(Observable);
+export default ClassComponent()(Observable);

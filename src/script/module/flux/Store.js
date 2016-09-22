@@ -8,4 +8,4 @@ class Store extends Emitter {
   }
 }
 
-export default ClassComponent('Store')(Store);
+export default ClassComponent()(Store);
