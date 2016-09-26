@@ -54,6 +54,7 @@
     "eventemitter2": "^2.0.0",
     "marked": "^0.3.6",
     "material-ui": "^0.15.2",
+    "mockable-container": "0.0.2",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
     "react-router": "^4.0.0-alpha.3",
