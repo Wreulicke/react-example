@@ -23,6 +23,6 @@ function ActionSerializer(store, actions, mutations) {
   }, {});
 }
 
-export default ClassComponent(Factory);
-const serializer = ClassComponent(ActionSerializer);
-export { serializer as ActionSerializer };
+export default ClassComponent(ActionSerializer);
+const serializer = ClassComponent(Factory);
+export { serializer as factory };

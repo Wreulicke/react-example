@@ -7,7 +7,7 @@ import { ClassComponent } from '../module/container/Application';
 class AppMenu extends React.Component {
   render() {
     const resetStyle = {
-      'marginLeft': '0px',
+      marginLeft: '0px',
       padding: '0px'
     };
     const linkStyle = {
