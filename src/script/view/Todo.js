@@ -5,28 +5,33 @@ import { List, ListItem } from 'material-ui/List';
 import ActionGrade from 'material-ui/svg-icons/action/grade';
 import { pinkA200 } from 'material-ui/styles/colors';
 import { ClassComponent } from '../module/container/Application';
+import enter from '../module/functions/onEnter';
+import handler from '../module/functions/handler';
 const map = Function.prototype.call.bind(Array.prototype.map);
 
 class TodoApp extends React.Component {
   constructor() {
     super();
     this.state = {
+      input: {
+        name: ''
+      },
       tasks: [{
         name: 'init'
       }]
     };
   }
 
-  addTask(e) {
-    if (e.keyCode && e.keyCode == 13) {
-      const newState = {
-        tasks: this.state.tasks.concat({
-          name: e.target.value
-        })
-      };
-      this.setState(newState);
-      e.target.value = '';
-    }
+  addTask() {
+    const newState = {
+      input: {
+        name: ''
+      },
+      tasks: this.state.tasks.concat({
+        name: this.state.input.name
+      })
+    };
+    this.setState(newState);
   }
 
   render() {
@@ -37,11 +42,18 @@ class TodoApp extends React.Component {
                 { task.name }
               </ListItem>);
     });
+    const trans = (v) => {
+      return {
+        name: v
+      };
+    };
     return (
       <div>
         <TextField
                    hintText="input task name"
-                   onKeyDown={ ::this.addTask } />
+                   value={ this.state.input.name }
+                   onKeyDown={ enter(::this.addTask) }
+                   onChange={ this::handler('input', trans) } />
         <List>
           { TaskList }
         </List>

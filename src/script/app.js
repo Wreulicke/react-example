@@ -17,19 +17,21 @@ const state = {
 };
 const store = new Store();
 const OState = O(state)(store);
-const App=() => (<BrowserRouter>
-           <MuiThemeProvider muiTheme={ getMuiTheme() }>
-             <div>
-               <AppHeader
-                          appState={ OState }
-                          store={ store } />
-               <SplitPane defaultSize="120px" style={{height:'80%'}}>
-                 <AppMenu />
-                 <MainContent
-                              store={ store }
-                              appState={ OState } />
-               </SplitPane>
-             </div>
-           </MuiThemeProvider>
-         </BrowserRouter>);
+const App = () => (<BrowserRouter>
+                     <MuiThemeProvider muiTheme={ getMuiTheme() }>
+                       <div>
+                         <AppHeader
+                                    appState={ OState }
+                                    store={ store } />
+                         <SplitPane
+                                    defaultSize="120px"
+                                    style={ { height: '80%' } }>
+                           <AppMenu />
+                           <MainContent
+                                        store={ store }
+                                        appState={ OState } />
+                         </SplitPane>
+                       </div>
+                     </MuiThemeProvider>
+                   </BrowserRouter>);
 export default ClassComponent(App);

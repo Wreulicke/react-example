@@ -4,7 +4,7 @@ import Paper from 'material-ui/Paper';
 
 import FlatButton from 'material-ui/FlatButton';
 import { ClassComponent } from '../module/container/Application';
-import {ListItem} from 'material-ui/List';
+import { ListItem } from 'material-ui/List';
 class AppHeader extends React.Component {
   constructor({store, appState}) {
     super();
@@ -16,9 +16,14 @@ class AppHeader extends React.Component {
   render() {
     return (<header className="header">
               <Paper className="header">
-                <div className="header" style={{justifyContent:'flex-end',display:'flex'}}>
-                  <ListItem primaryText={ this.appState.name || 'no name' } disabled={true}/>
-                  <FlatButton label="Logout"
+                <div
+                     className="header"
+                     style={ { justifyContent: 'flex-end', display: 'flex' } }>
+                  <ListItem
+                            primaryText={ this.appState.name || 'no name' }
+                            disabled={ true } />
+                  <FlatButton
+                              label="Logout"
                               primary={ true }
                               onTouchTap={ () => {
                                              this.appState.isLogin = false;

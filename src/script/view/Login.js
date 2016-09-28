@@ -41,17 +41,17 @@ class Login extends React.Component {
                    modal={ true }
                    open={ !appState.isLogin }>
              <div>
-                <TextField
-                            hintText="id"
-                            defaultValue={this.state.id}
-                            onChange={ this::handler('id') } />
-                <br />
-                <TextField
-                            hintText="password"
-                            defaultValue={ this.state.password }
-                            onChange={ this::handler('password') }
-                            onKeyDown={ enter(::this.login) } />
-              </div>
+               <TextField
+                          hintText="id"
+                          defaultValue={ this.state.id }
+                          onChange={ this::handler('id') } />
+               <br />
+               <TextField
+                          hintText="password"
+                          defaultValue={ this.state.password }
+                          onChange={ this::handler('password') }
+                          onKeyDown={ enter(::this.login) } />
+             </div>
            </Dialog>;
   }
 }
